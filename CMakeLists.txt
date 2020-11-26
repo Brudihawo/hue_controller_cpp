@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(cpp_hue_controller)
 add_executable(hue_controller main.cpp)
+set_property(TARGET hue_controller PROPERTY CXX_STANDARD 20)
 
 set(VENDOR_DIR ${cpp_hue_controller_SOURCE_DIR}/res/vendor)
 set(SRC_DIR ${cpp_hue_controller_SOURCE_DIR}/src)
