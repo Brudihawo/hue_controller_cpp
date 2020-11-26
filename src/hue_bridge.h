@@ -1,15 +1,20 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
-class hue_bridge {
+class HueBridge {
     private:
         std::string m_ip;
+        std::string m_username;
+        std::vector<std::pair<std::string, std::string>> m_lights;
     
     public:
-        hue_bridge(std::string ip);
-        ~hue_bridge();
+        HueBridge(std::string ip);
+        ~HueBridge();
 
-        bool light_on(std::string light_name);
-        bool light_off(std::string light_name);
+        bool LightOn(std::string light_name);
+        bool LightOff(std::string light_name);
+        bool RefreshLights();
+        void SetUsername(std::string username);
 };
